@@ -87,15 +87,18 @@ function Compare-STMSVersionNumbers
      .example
         Compare-STMSVersionNumbers 2.0.1.1 2.0.0.2 2 
         Return 0 
-        Major and Minor of Current and Latest are equal and the Current Build 1 > Latest Build 0 but within +/- build_tolerance of 2.
+        Major and Minor of Current and Latest are equal and the Current Build 1 > Latest Build 0 
+        but within +/- build_tolerance of 2.
      
      .Notes
-      Microsoft uses several versioning standards across its products and libraries. Function uses the following key points:
+      Microsoft uses several versioning standards across its products and libraries. 
+      Function uses the following key points:
 
       1. **Semantic Versioning (SemVer)**:
          - Commonly used for NuGet and MSI packages.
          - Format: **Major.Minor.Patch** (e.g., 1.0.0).
-         - Major version changes indicate breaking changes, minor versions add functionality in a backward-compatible manner, and patch versions include backward-compatible bug fixes.
+         - Major version changes indicate breaking changes, minor versions add functionality 
+           in a backward-compatible manner, and patch versions include backward-compatible bug fixes.
 
       2. **Assembly Versioning**:
          - Used by the .NET runtime to load the correct version of an assembly.
