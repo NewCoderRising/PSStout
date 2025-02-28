@@ -1,5 +1,5 @@
-﻿Function ConvertTo-STPSStringToScriptBlock
-{ # ConvertTo-STPSStringToScriptBlock
+﻿Function ConvertTo-STStringToScriptBlock
+{ # ConvertTo-STStringToScriptBlock
 
   <#
     .SYNOPSIS
@@ -16,7 +16,7 @@
      Input value of string that will be converted into script block type value.
 
     .EXAMPLE
-     $sb = "Get-Service" | ConvertTo-STPSStringToScriptBlock
+     $sb = "Get-Service" | ConvertTo-STStringToScriptBlock
      Invoke-Command -ScriptBlock $sb
 
      String value "Get-Service" is coverted into a scriptblock and kept in $sb variable.
@@ -68,4 +68,4 @@
     
     END { }
 
-} # ConvertTo-STPSStringToScriptBlock
+} # ConvertTo-STStringToScriptBlock
