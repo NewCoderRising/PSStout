@@ -1,6 +1,5 @@
 ﻿function ConvertFrom-STCredentials
  { # ConvertFrom-STCredentials
-   
    <#   
    .SYNOPSIS   
       Converts secured userid and password files created by function ConvertTo-STCredentials and returns a Powershell Credential
@@ -15,23 +14,22 @@
       This is the full path name to the password file
 
    .PARAMETER SecuredUserName (switch) (optional)
-      Switch to tell the function that the userid file has been secured by the Convertto-NCPSCredentials using the switch -SecureUserName
-      By default the userid file shows the userid in plaintext but if the Convertto-NCPSCredentials uses the switch -SecureUserName
-      The username file is secured. If you use switch -SecureUserName in Convertto-NCPSCredentials you will have to use switch -UserNameIsSecured in
-      Convertfrom-NCPSCredentials
+      Switch to tell the function that the UserName file has been secured by the ConvertTo-STCredentials using the switch -SecureUserName
+      By default the userid file shows the userid in plaintext but if the ConvertTo-STCredentials uses the switch -SecureUserName
+      the username file is secured. If you use switch -SecureUserName in Convertto-NCPSCredentials you will have to 
+      use the switch -UserNameIsSecured in Convertfrom-NCPSCredentials
 
    .PARAMETER VerbosePeek (switch) (optional)
-      Setting -verbosePeek switch the function will show the userid and password displayed displayed on powershell warning screen.
-      This only works for the user that generated the userid and password and on the system where it was geneterated.
+      Setting -verbosePeek switch the function will display username and password in warning console.
       WARNING - userid and pasword will be displayed (USE ONLY FOR TROUBLSHOOTING)
 
    .EXAMPLE  
-      $credential = ConvertFrom-NCPSCredentials -UserNameFile $useridfile -PasswordFile $passwordfile -UserNameIsSecured -Verbose
+      $credential = ConvertFrom-STCredentials -UserNameFile $useridfile -PasswordFile $passwordfile -UserNameIsSecured -Verbose
       Returns a PowerShell credential from the user name in the file $useridfile and from the password in the file $passwordfile 
       The user name file is in a secured format.
         
    .EXAMPLE 
-      ConvertFrom-NCPSCredentials -UserNameFile $useridfile -PasswordFile $passwordfile -UserNameIsSecured -Verbosepeek
+      ConvertFrom-STCredentials -UserNameFile $useridfile -PasswordFile $passwordfile -UserNameIsSecured -Verbosepeek
       Returns a PowerShell credential from the user name in the file $useridfile and from the password in the file $passwordfile 
       The user name file is in a secured format. The userid and password will be displayed in the following format
         WARNING: Password and UserName will be displayed
@@ -51,10 +49,7 @@
       
      1.0.0.0 - 2025-02-27
                Function was versioned to be placed in the PSStout Modules
-               
-
- #>  
-   
+  #>  
     
    [cmdletbinding()]    
    Param (
