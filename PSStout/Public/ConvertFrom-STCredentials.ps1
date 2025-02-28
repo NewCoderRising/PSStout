@@ -63,7 +63,7 @@
                 [string]$PasswordFile,
               [Parameter(
                 Mandatory = $False)]
-                [switch]$SecuredUserName,
+                [switch]$SecureUserName,
               [Parameter(
                 Mandatory = $False)]
                 [switch]$VerbosePeek                       
@@ -78,9 +78,9 @@
      }
 
     [bool]$bUserNameIsSecured = $false
-    if($UserNameIsSecured.IsPresent) 
+    if($SecureUserName.IsPresent) 
      {
-       write-verbose "The Switch that the username is in secured format was set"
+       write-verbose "Switch for username in secured format was set"
        $bUserNameIsSecured = $true
      }
    
